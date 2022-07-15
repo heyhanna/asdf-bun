@@ -23,7 +23,7 @@ install_bun() {
   local install_path=$3
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-deno supports release installs only"
+    fail "asdf-bun supports release installs only"
   fi
 
   local platform
@@ -46,14 +46,14 @@ install_bun() {
 
   archive_format="zip"
   archive_file="bun-${platform}-${architecture}.${archive_format}"
-  uncompress_command="unzip -d ${install_path}/bin"
+  uncompress_command="unzip -d ${install_path}"
 
   local download_url="https://github.com/oven-sh/bun/releases/download/bun-v${version}/${archive_file}"
-  local source_path="${install_path}/bin/bun.${archive_format}"
+  local source_path="${install_path}/bun.${archive_format}"
 
   echo "Downloading and installing bun..."
   curl --create-dirs -sfL -o "$source_path" "$download_url"
-  $uncompress_command "$source_path" && mv "bun-${platform}-${architecture}/bun" "${install_path}/bin"
+  $uncompress_command "$source_path" && mv "${install_path}/bun-${platform}-${architecture}" "${install_path}/bin"
   rm -f "${source_path}"
 
   echo "The installation was successful"

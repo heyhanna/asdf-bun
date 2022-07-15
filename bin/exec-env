@@ -2,6 +2,6 @@
 
 if [ "$ASDF_INSTALL_VERSION" != "system" ]; then
   if [ -z "$BUN_INSTALL" ]; then
-    export BUN_INSTALL=$ASDF_INSTALL_PATH/.deno
+    export BUN_INSTALL=$ASDF_INSTALL_PATH
   fi
 fi
