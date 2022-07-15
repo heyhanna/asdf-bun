@@ -59,4 +59,4 @@ install_bun() {
   echo "The installation was successful"
 }
 
-install_deno "$BUN_INSTALL_TYPE" "$BUN_INSTALL_VERSION" "$BUN_INSTALL_PATH"
+install_deno "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
